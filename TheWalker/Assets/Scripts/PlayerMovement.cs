@@ -30,17 +30,16 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = true;
         }
+
+
         MovePlayer(horizontalMovement);
-
-
         Flip(rb.velocity.x);
 
         float characterVelocity = Mathf.Abs(rb.velocity.x);
         animator.SetFloat("Speed", characterVelocity);
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
 
-        MovePlayer(horizontalMovement);
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
+
 
     }
 
